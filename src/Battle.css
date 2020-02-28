@@ -1,0 +1,172 @@
+
+.Battle-Container {
+background-color: rgb(100, 201, 0);
+margin: 250px;
+margin-top: 0px;
+border-radius: 5px;
+height: 820px;
+border: 3px solid black;
+}
+
+.user-container{
+    
+}
+
+.user-status-box{
+    background-color: white;
+    position: relative;
+    float: right;
+    top: 500px;
+    left: 160px;
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 100px;
+    width: 30%;
+}
+
+.column {
+    float: left;
+    width: 12%;
+    padding: 5px;
+  }
+
+
+.user-pokemon-holder{
+    background-color: white;
+    position: relative;
+    float: left;
+    top: 350px;
+    left: 100px;
+    border: 10px solid #9b7653;
+    background-color: #7aff33;
+    border-radius: 400px / 175px;
+    height: 100px;
+    width: 30%;
+}
+
+.cpu-container{
+
+}
+
+.cpu-status-box{
+    background-color: white;
+    position: relative;
+    float: left;
+    top: 50px;
+    left: 110px;
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 100px;
+    width: 30%;
+}
+
+.cpu-pokemon-holder{
+    background-color: white;
+    position: relative;
+    float: right;
+    top: 310px;
+    right: 100px;
+    border: 10px solid #9b7653;
+    background-color: #7aff33;
+    border-radius: 400px / 175px;
+    height: 100px;
+    width: 30%;
+}
+
+.Battle {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d83jrvo-9c5af987-f243-4528-8455-5ca87551aa58.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDgzanJ2by05YzVhZjk4Ny1mMjQzLTQ1MjgtODQ1NS01Y2E4NzU1MWFhNTguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ppI6BlfrDlMedMOYkq39S7-HuBZtJ8TNEQPKlCZxVl0');
+	object-fit: cover;
+	background-size:cover;
+	height:650px;
+	width:934px;
+}
+
+.Menu {
+    position: relative;
+  
+    margin: 2px;
+    border-radius: 3px;
+    height: 160px;
+    border: 3px solid black;
+    background-color: grey;
+}
+
+.text-container {
+    position: relative;
+    float: left;
+    height: 145px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 40%;
+    font-size: 20px;
+}
+
+#fight-button{
+    position: relative;
+    float: right ;
+    border-radius: 10px;
+    width: 25%;
+    height: 75px;
+    font-size: 30px;
+    color: white;
+    background-color: red;
+    
+}
+
+#pokemon-button{
+    position: relative;
+    float: right;
+    left: 3px;
+    border-radius: 10px;
+    width: 25%;
+    height: 75px;
+    font-size: 30px;
+    color: white;
+    background-color: green;
+}
+
+#cpu-poke{
+    position: relative;
+    float:left;
+    left: 32px;
+    bottom: 95px;
+    height: 200px;
+    width: 200px;
+}
+
+#user-poke{
+    position: relative;
+    float: right;
+    right: 32px;
+    bottom: 95px;
+    height: 200px;
+    width: 200px;
+}
+
+#moves-back-btn {
+    position: relative;
+    float: right;
+}
+
+#moves-container{
+    text-align: center;
+    width: auto;
+    bottom: 30px;
+}
+
+#first-move-btn{
+    color: blue;
+}
+
+#second-move-btn{
+      color: red; 
+}
+
+#third-move-btn{
+    color: yellow;
+}
+
+#fourth-move-btn{
+    color: green;
+}
