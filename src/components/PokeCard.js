@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Image, Icon, Button, Modal, Header, Grid} from 'semantic-ui-react'
+import {Card, Image, Icon, Button, Modal, Header} from 'semantic-ui-react'
 
 const PokeCard = (props) => (
                     <Card >   
@@ -25,35 +25,24 @@ const PokeCard = (props) => (
                     <Modal.Description>
                         <Header>Type: {props.pokemon.poke_type}</Header>
                         <Header>Moves</Header>
-                        <Grid columns={3} divided>
-                        <Grid.Row>
-                        <Grid.Column>
-                        <h3>{props.pokemon.moves[0].name}</h3>
-                        </Grid.Column>
-                        <Grid.Column>
-                
-                        <p>Power {props.pokemon.moves[0].power}</p>
-                        </Grid.Column>
-                        <Grid.Column>
-                        <p>Accuracy {props.pokemon.moves[0].accuracy}</p>
-                        </Grid.Column>
-                        </Grid.Row>     
-                        <Grid.Column>
-                        <p>Type: {props.pokemon.moves[0].type}</p>
-                        </Grid.Column>
-                        <Grid.Column>
-                        <p>Move Category: {props.pokemon.moves[0].move_type}</p>
-                        </Grid.Column>
-                        </Grid>
-                        <p>
-                        {props.pokemon.moves[1].name}
-                        </p>
-                        <p>
-                        {props.pokemon.moves[2].name}
-                        </p>
-                        <p>
-                        {props.pokemon.moves[3].name}
-                        </p>
+                        {props.pokemon.moves.map(move => {
+                            return (
+                                <div style={{display: 'flex', justifyContent: 'space-around'}}>
+                                    <h4> {move.name} </h4>
+                                    <p> Power: {move.power} </p>
+                                    <p> Accuracy: {move.accuracy} </p>
+                                    <p> Type: {move.type} </p>
+                                </div>
+                            )
+                        })}
+                        <Header>Stats</Header>
+                        {props.pokemon.stats.map(stat => {
+                            return (
+                                <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                                    <h4>{stat.name}: {stat.value}</h4>
+                                </div>
+                            )
+                        })}
                     </Modal.Description>
                     </Modal.Content>
                     </Modal>

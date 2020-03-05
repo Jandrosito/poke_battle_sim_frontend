@@ -1,16 +1,14 @@
 import React, {Component} from 'react'
-import {Grid, Button} from 'semantic-ui-react'
+import '../Battle.css'
 
 export default class Battle extends Component {
 
     render() {
-        console.log(this.props.poke)
         return (
-            <Grid.Column >
-                <Button onClick={() => this.props.PickPokeTeamRemove(this.props.poke.id)} >Remove</Button>
+            <div className="pick-pokemon-team-card" onClick={() => this.props.PickPokeTeamRemove(this.props.poke.id)}>
                 <p>{this.props.poke['pokemon'].name}</p>
-                <img src={this.props.poke['pokemon'].sprites.frontimg}/>
-            </Grid.Column>
+                <img alt={this.props.poke['pokemon'] + "photo"} src={this.props.poke['pokemon'].sprites.frontimg}/>
+                </div>
         )
     }
 }
