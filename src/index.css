@@ -1,4 +1,6 @@
-body {
+.body {
+  background-image: url('https://media.idownloadblog.com/wp-content/uploads/2015/08/samsung-galaxy-polyart-blue-purple-pattern-9-wallpaper.jpg');
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

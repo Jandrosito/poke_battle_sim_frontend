@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 import PokeCards from './PokeCards'
 import BattleContainer from './BattleContainer'
 import BattleMusic from './BattleMusic'
-import {Button, Grid} from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 import PokeTeam from './PokemonTeam'
+import '../Battle.css'
 
 export default class pickPoke extends Component {
     state = {
@@ -20,11 +21,10 @@ export default class pickPoke extends Component {
 
     renderTeam = () => {
             return (
-                <Grid columns={6}>
-                    <Grid.Row>
-                         {this.state.currentTeam.map(poke => <PokeTeam PickPokeTeamRemove={this.PickPokeTeamRemove} key={poke.id} poke={poke}/>)}
-                    </Grid.Row>
-                </Grid>
+                <div className="pickpoke-team-container">
+                    <h1 style={{float: 'left'}} >Team</h1>
+                    {this.state.currentTeam.map(poke => <PokeTeam PickPokeTeamRemove={this.PickPokeTeamRemove} key={poke.id} poke={poke}/>)}
+                </div>
             )
     }
 
@@ -82,22 +82,21 @@ export default class pickPoke extends Component {
     }
 
     renderBattle = () => {
+        if (this.state.currentTeam.length > 0) {
         this.setState({battleRender: true})
+        }
     }
 
     render() {
         return (
             <React.Fragment>
-                {this.state.battleRender === false ?<div>
-                <Button style={{float: 'left'}} onClick={() => this.props.renderHome(this.state.currentTeamId)}>Back</Button>
-                <Button onClick={this.renderBattle} style={{float: 'right'}}>Play</Button>
-                <h1 style={{textAlign: 'center'}} >Team</h1>
-                {this.state.renderTeam ? this.renderTeam() : null}
-                {this.state.battleRender === false ? <PokeCards pokemonList={this.props.pokemonList} pickPokeTeamAdd={this.pickPokeTeamAdd} conditionalRender={this.props.conditionalRender}/> :null}
-                </div> : null}
-               {this.state.currentTeam.length > 0 ?<div>
-                {this.state.battleRender ? <div><BattleMusic/><BattleContainer currentTeam={this.state.currentTeam}/></div> : null}
-               </div> : null}
+                {this.state.battleRender === false ? <div>
+                        <Button id="pick-poke-back-btn" onClick={() => this.props.renderHome(this.state.currentTeamId)}>Back</Button>
+                        <Button id="pick-poke-play-btn" onClick={this.renderBattle}>Play</Button>
+                        {this.state.renderTeam ? this.renderTeam() : null}
+                    {this.state.battleRender === false ? <PokeCards pokemonList={this.props.pokemonList} pickPokeTeamAdd={this.pickPokeTeamAdd} conditionalRender={this.props.conditionalRender}/> :null}
+                    </div> : null}
+                {this.state.battleRender ? <div><BattleMusic renderHomeFromBattle={this.props.renderHomeFromBattle} currentTeam={this.state.currentTeam}/></div> : null}
             </React.Fragment>
         )
     }

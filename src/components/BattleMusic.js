@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-
+import BattleContainer from './BattleContainer.js'
 
 export default class BattleMusic extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            play: true
+            play: false,
         };
 
         this.url = "https://vgmdownloads.com/soundtracks/pokemon-diamond-and-pearl-super-music-collection/kbqajyde/1-20%20Battle%21%20Trainer.mp3";
@@ -21,14 +21,19 @@ export default class BattleMusic extends Component {
     componentDidMount() {
         this.togglePlay()
     }
-    
+
     togglePlay() {
-        this.audio.play()
+        this.setState({
+            play: !this.state.play
+        }, () => this.state.play ? this.audio.play() : this.audio.pause());
+
+        
     }
 
     render() {
         return (
             <div>
+                <BattleContainer pause={this.togglePlay}  currentTeam={this.props.currentTeam} renderHomeFromBattle={this.props.renderHomeFromBattle} conditionalRender={this.props.conditionalRender}/>
             </div>
         );
     }
